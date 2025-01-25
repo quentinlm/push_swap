@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:33:00 by quclaque          #+#    #+#             */
-/*   Updated: 2024/11/08 07:46:27 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/25 12:55:06 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_format_int(va_list args)
 
 	nbr = va_arg(args, int);
 	str = ft_itoa(nbr);
-	len = ft_strlen(str);
+	len = ft_strlene(str);
 	write(1, &str[0], len);
 	free(str);
 	return (len);

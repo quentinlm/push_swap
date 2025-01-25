@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:32:21 by quclaque          #+#    #+#             */
-/*   Updated: 2024/11/08 07:46:31 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/25 12:54:45 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	ft_format_s(va_list args)
 	{
 		return (write(1, "(null)", 6));
 	}
-	return (write(1, str, ft_strlen(str)));
+	return (write(1, str, ft_strlene(str)));
 }

@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 09:56:20 by quclaque          #+#    #+#             */
-/*   Updated: 2024/11/09 10:15:06 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/25 12:54:01 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_strchr(const char *s, int c)
 	return ((char *)s);
 }
 
-int	ft_isdigit(int c)
+int	ft_isdigite(int c)
 {
 	return (c >= '0' && c <= '9');
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlene(const char *str)
 {
 	size_t	len;
 

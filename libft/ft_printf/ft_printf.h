@@ -12,8 +12,8 @@ int		ft_format_int(va_list args);
 int		ft_format_u(va_list args);
 int		ft_format_x(va_list args, int flag);
 char	*ft_strchr(const char *s, int c);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *str);
+int		ft_isdigite(int c);
+size_t	ft_strlene(const char *str);
 char	*ft_itoa(int n);
 void	ft_format_flag(va_list args, const char *format, int i);
 

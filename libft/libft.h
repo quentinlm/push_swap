@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 08:19:58 by qclaqueb          #+#    #+#             */
-/*   Updated: 2025/01/04 12:31:54 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/25 12:30:46 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-typedef struct s_list
+typedef struct s_liste
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list;
+}	t_liste;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
