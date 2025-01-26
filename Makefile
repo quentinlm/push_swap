@@ -4,7 +4,7 @@ FLAGS = -Wall -Werror -Wextra
 
 SRC_PATH = src/
 
-SRC = push_swap.c check_input.c ft_lst.c
+SRC = push_swap.c check_input.c ft_lst.c swap.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
 
@@ -23,8 +23,10 @@ $(NAME): $(OBJ) libft/libft.a
 
 clean:
 	rm -rf $(OBJ)
+	$(MAKE) clean -C libft
 
 fclean:	clean
 	rm -f $(NAME)
+	$(MAKE) fclean -C libft
 
 re: fclean all

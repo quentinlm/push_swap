@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:32:30 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/25 12:35:40 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:36:31 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ void	ft_lstadd_front(t_stack *stack, t_list *new);
 t_list	*lstlast(t_stack *stack);
 void	ft_printlst(t_stack *stack);
 int		check_input(char **av);
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
 
 #endif

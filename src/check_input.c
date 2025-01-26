@@ -6,11 +6,21 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 11:50:45 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/25 13:06:20 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:10:49 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
 
 int	is_sign(char c)
 {
@@ -42,7 +52,7 @@ int	check_doubles(char **av)
 		j = i + 1;
 		while (av[j])
 		{
-			if (ft_strncmp(av[i], av[j], ft_strlen(av[i]) == 0))
+			if (ft_strcmp(av[i], av[j]) == 0)
 				return (0);
 			j++;
 		}
@@ -62,7 +72,5 @@ int	check_input(char **av)
 			return (0);
 		i++;
 	}
-	if (!check_doubles(av))
-		return (0);
-	return (1);
+	return (check_doubles(av));
 }

@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:12 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/25 12:56:01 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:37:12 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,15 @@ t_stack	*init_stack(void)
 	return (stack);
 }
 
-/* void	fill_stack_a(t_stack *stack_a, char **av, int ac)
+void	fill_stack_a(t_stack *stack_a, char **av, int ac)
 {
-	int	i;
-
-	i = 1;
-} */
+	ac -= 1;
+	while (ac > 0)
+	{
+		push(stack_a, ft_atoi(av[ac]));
+		ac--;
+	}
+}
 
 int	main(int ac, char **av)
 {
@@ -71,6 +74,8 @@ int	main(int ac, char **av)
 	stack_b = init_stack();
 	if (!check_input(av))
 		return (-1);
-	ft_printf("OK");
-	//fill_stack_a(stack_a, av, ac);
+	fill_stack_a(stack_a, av, ac);
+	ft_printlst(stack_a);
+	sa(stack_a);
+	ft_printlst(stack_a);
 }
