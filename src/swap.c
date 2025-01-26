@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 11:22:15 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 11:36:08 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:43:40 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	swap(t_stack *stack)
+static void	swap(t_stack *stack)
 {
 	t_list	*first;
 	t_list	*second;
@@ -43,4 +43,11 @@ void	sb(t_stack *stack_b)
 {
 	swap(stack_b);
 	ft_printf("sb\n");
+}
+
+void	ss(t_stack *stack_a, t_stack *stack_b)
+{
+	sa(stack_a);
+	sb(stack_b);
+	ft_printf("ss\n");
 }

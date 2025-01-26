@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:32:30 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 11:36:31 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:50:10 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ void	ft_printlst(t_stack *stack);
 int		check_input(char **av);
 void	sa(t_stack *stack_a);
 void	sb(t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
 
 #endif
