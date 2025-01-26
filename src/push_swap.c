@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:12 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 13:09:13 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:00:49 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int	main(int ac, char **av)
 		return (-1);
 	fill_stack_a(stack_a, av, ac);
 	ft_printlst(stack_a);
-	rra(stack_a);
-	ft_printf("--\n");
+	sort(stack_a, stack_b);
 	ft_printlst(stack_a);
 }
