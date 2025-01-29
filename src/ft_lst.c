@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:33:17 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 11:48:08 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:21:15 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,15 @@ t_list	*lstlast(t_stack *stack)
 
 void	ft_printlst(t_stack *stack)
 {
+	char	*char_tmp;
 	t_list	*tmp;
 
 	tmp = stack->top;
 	while (tmp)
 	{
-		ft_putendl_fd(ft_itoa(tmp->value), 1);
+		char_tmp = ft_itoa(tmp->value);
+		ft_putendl_fd(char_tmp, 1);
 		tmp = tmp->next;
+		free(char_tmp);
 	}
 }

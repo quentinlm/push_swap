@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 11:39:11 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 18:01:54 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/27 07:43:21 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	push(t_stack *from, t_stack *to)
 		to->top->prev = tmp;
 	to->top = tmp;
 	to->top->prev = NULL;
+	from->size--;
+	to->size++;
 }
 
 void	pa(t_stack *stack_a, t_stack *stack_b)

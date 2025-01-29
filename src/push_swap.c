@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:12 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 15:00:49 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:50:23 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,29 @@ void	fill_stack_a(t_stack *stack_a, char **av, int ac)
 	}
 }
 
+void	free_lst(t_stack *stack_a, t_stack *stack_b)
+{
+	t_list	*current;
+	t_list	*tmp;
+
+	current = stack_a->top;
+	while (current)
+	{
+		tmp = current;
+		current = current->next;
+		free(tmp);
+	}
+	free(stack_a);
+	current = stack_b->top;
+	while (current)
+	{
+		tmp = current;
+		current = current->next;
+		free(tmp);
+	}
+	free(stack_b);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
@@ -70,12 +93,13 @@ int	main(int ac, char **av)
 
 	if (ac <= 1)
 		return (-1);
-	stack_a = init_stack();
-	stack_b = init_stack();
 	if (!check_input(av))
 		return (-1);
+	stack_a = init_stack();
+	stack_b = init_stack();
 	fill_stack_a(stack_a, av, ac);
 	ft_printlst(stack_a);
-	sort(stack_a, stack_b);
+	sort_stack(stack_a, stack_b);
 	ft_printlst(stack_a);
+	free_lst(stack_a, stack_b);
 }

@@ -6,10 +6,9 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:32:30 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 15:02:59 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:49:33 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -43,6 +42,6 @@ void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
-void	sort(t_stack *stack_a, t_stack *stack_b);
+void	sort_stack(t_stack *a, t_stack *b);
 
 #endif

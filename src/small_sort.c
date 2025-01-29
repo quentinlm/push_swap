@@ -6,13 +6,8 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 13:34:57 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 13:35:27 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:55:52 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	small_sort(t_stack *stack)
-{
-	
-}
