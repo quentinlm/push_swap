@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 12:55:16 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/29 12:10:47 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:32:04 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,9 @@ static void	rev_rotate(t_stack *stack)
 	tmp = stack->top;
 	last = lstlast(stack);
 
-	stack->top = last->prev;
 	stack->top->next = NULL;
 
-	last->prev = NULL;
 	last->next = tmp;
-	tmp->prev = last;
 	stack->top = last;
 }
 

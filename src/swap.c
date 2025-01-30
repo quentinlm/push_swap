@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 11:22:15 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/26 11:43:40 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:33:11 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,8 @@ static void	swap(t_stack *stack)
 	second = stack->top->next;
 
 	first->next = second->next;
-	if (second->next)
-		second->next->prev = first;
 
-	second->prev = NULL;
 	second->next = first;
-	first->prev = second;
 
 	stack->top = second;
 }

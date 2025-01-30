@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:32:30 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/29 10:49:33 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:34:23 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 typedef struct s_list
 {
 	int				value;
-	struct s_list	*prev;
+	int				flag;
 	struct s_list	*next;
 }				t_list;
 
@@ -42,6 +42,6 @@ void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
-void	sort_stack(t_stack *a, t_stack *b);
+void	quicksort(t_stack *stack_a, t_stack *stack_b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 11:39:11 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/27 07:43:21 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:31:55 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,8 @@ static void	push(t_stack *from, t_stack *to)
 
 	tmp = from->top;
 	from->top = from->top->next;
-	if (from->top)
-		from->top->prev = NULL;
 	tmp->next = to->top;
-	if (to->top)
-		to->top->prev = tmp;
 	to->top = tmp;
-	to->top->prev = NULL;
 	from->size--;
 	to->size++;
 }

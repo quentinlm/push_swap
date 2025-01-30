@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:33:17 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/27 13:21:15 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:32:56 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_list	*ft_lstnew(int value)
 	if (!new)
 		return (NULL);
 	new->next = NULL;
-	new->prev = NULL;
 	new->value = value;
 	return (new);
 }
@@ -30,9 +29,6 @@ void	ft_lstadd_front(t_stack *stack, t_list *new)
 	if (!stack || !new)
 		return ;
 	new->next = stack->top;
-	if (stack->top)
-		stack->top->prev = new;
-	new->prev = NULL;
 	stack->top = new;
 	stack->size++;
 }

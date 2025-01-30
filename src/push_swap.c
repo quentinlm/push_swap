@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:12 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/29 10:50:23 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/30 10:55:45 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	push(t_stack *stack, int value)
 
 	new_node = ft_lstnew(value);
 	new_node->next = stack->top;
-	if (stack->top)
-		stack->top->prev = new_node;
 	stack->top = new_node;
 	stack->size++;
 }
@@ -34,8 +32,6 @@ int	pop(t_stack *stack)
 	tmp = stack->top;
 	value = tmp->value;
 	stack->top = tmp->next;
-	if (stack->top)
-		stack->top->prev = NULL;
 	free(tmp);
 	stack->size--;
 	return (value);
@@ -98,8 +94,11 @@ int	main(int ac, char **av)
 	stack_a = init_stack();
 	stack_b = init_stack();
 	fill_stack_a(stack_a, av, ac);
+	ft_printf("Before---\n");
 	ft_printlst(stack_a);
-	sort_stack(stack_a, stack_b);
+	quicksort(stack_a, stack_b);
+	ft_printf("After---\n");
 	ft_printlst(stack_a);
 	free_lst(stack_a, stack_b);
+	return (0);
 }
