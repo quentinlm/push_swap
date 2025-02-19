@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:12 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/30 10:55:45 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/01/31 09:26:53 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	push(t_stack *stack, int value)
 	new_node->next = stack->top;
 	stack->top = new_node;
 	stack->size++;
+	new_node->flag = -1;
 }
 
 int	pop(t_stack *stack)
