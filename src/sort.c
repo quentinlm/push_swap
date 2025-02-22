@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:42:02 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 14:08:42 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 14:24:00 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,19 @@ t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
 		i = find_best_ba(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == rot_check_rarb_a(*stack_, *stack_b, tmp->value))
+			if (i == rot_check_rarb_a(*stack_a, *stack_b, tmp->value))
+				i = set_rarb_b(stack_a, stack_b, tmp->value);
+			else if (i == rot_check_rarrb_a(*stack_a, *stack_b, tmp->value))
+				i = set_rarrb_b(stack_a, stack_b, tmp->value);
+			else if (i == rot_check_rrarrb_a(*stack_a, *stack_b, tmp->value))
+				i = set_rrarrb_b(stack_a, stack_b, tmp->value);
+			else if (i == rot_check_rrarb_a(*stack_a, *stack_b, tmp->value))
+				i = set_rrarb_b(stack_a, stack_b, tmp->value);
+			else
+				tmp = tmp->next;
 		}
 	}
+	return (stack_a);
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)

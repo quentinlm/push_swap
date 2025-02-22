@@ -4,7 +4,9 @@ FLAGS = -Wall -Werror -Wextra
 
 SRC_PATH = src/
 
-SRC = push_swap.c check_input.c ft_lst.c swap.c push.c rotate.c rev_rotate.c
+SRC = push_swap.c check_input.c ft_lst.c swap.c push.c rotate.c rev_rotate.c \
+		ft_util.c set_rot_push_a.c set_rot_push_b.c sort_opti_ab.c sort_opti_ba.c \
+		sort_small.c sort.c stack_poss.c
 
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
 
