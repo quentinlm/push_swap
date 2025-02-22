@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:33:17 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 12:21:11 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:46:28 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,19 @@ void	free_lst(t_stack *stack_a, t_stack *stack_b)
 		current = current->next;
 		free(tmp);
 	}
+}
+
+int	lstsize(t_stack *lst)
+{
+	size_t	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
 
 void	ft_printlst(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:32:30 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 12:27:59 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 13:32:24 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,18 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
+int		lstsize(t_stack *lst);
+int		ft_min(t_stack *stack);
+int		ft_max(t_stack *stack);
+int		is_sorted(t_stack *stack_a);
+int		find_index(t_stack *stack_a, int value);
+int		find_place_in_b(t_stack *stack_b, int check_val);
+int		find_place_in_a(t_stack *stack_a, int check_val);
+void	sort_three(t_stack **stack_a);
+int		find_best_ab(t_stack *stack_a, t_stack *stack_b);
+int		rot_check_rarb(t_stack *stack_a, t_stack *stack_b, int val);
+int		rot_check_rrarrb(t_stack *s_a, t_stack *stack_b, int val);
+int		rot_check_rrarb(t_stack *stack_a, t_stack *stack_b, int val);
+int		rot_check_rarrb(t_stack *stack_a, t_stack *stack_b, int val);
 
 #endif
