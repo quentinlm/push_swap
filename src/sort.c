@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:42:02 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 14:36:39 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:35:17 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_for_three(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*tmp;
 	int		i;
 
-	while (lstsize(*stack_a) > 3 && is_sorted(*stack_a))
+	while (lstsize(*stack_a) > 3 && !is_sorted(*stack_a))
 	{
 		tmp = *stack_a;
 		i = find_best_ab(*stack_a, *stack_b);
@@ -78,7 +78,6 @@ t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*stack;
 	int		i;
 
 	if (lstsize(*stack_a) == 2)
@@ -86,7 +85,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	else
 	{
 		*stack_b = sort_b(stack_a, stack_b);
-		*stack_a = *sort_a(&stack, stack_b);
+		*stack_a = *sort_a(stack_a, stack_b);
 		i = find_index(*stack_a, ft_min(*stack_a));
 		if (i < lstsize(*stack_a) - i)
 		{
