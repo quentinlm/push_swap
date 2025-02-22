@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:47:09 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 12:55:04 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 14:26:58 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int	ft_max(t_stack *stack)
 	int		i;
 
 	i = stack->value;
-	while (stack->value)
+	while (stack)
 	{
 		if (stack->value > i)
 			i = stack->value;
-		stack = stack->value;
+		stack = stack->next;
 	}
 	return (i);
 }

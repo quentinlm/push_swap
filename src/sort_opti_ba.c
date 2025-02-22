@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:53:00 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 14:06:30 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 14:33:39 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int	rot_check_rarb_a(t_stack *stack_a, t_stack *stack_b, int val)
 	return (i);
 }
 
-int	rot_check_rrarrb_a(t_stack *stack_a, t_stack **s_b, int val)
+int	rot_check_rrarrb_a(t_stack *stack_a, t_stack *s_b, int val)
 {
 	int	i;
 
 	i = 0;
 	if (find_place_in_a(stack_a, val))
 		i = lstsize(stack_a) - find_place_in_a(stack_a, val);
-	if (i < (lstsize(s_b) - find_index(s_b, val)) && find_index(s_b, val))
+	if ((i < (lstsize(s_b) - find_index(s_b, val))) && find_index(s_b, val))
 		i = lstsize(s_b) - find_index(s_b, val);
 	return (i);
 }
@@ -42,6 +42,7 @@ int	rot_check_rarrb_a(t_stack *stack_a, t_stack *stack_b, int val)
 	if (find_index(stack_b, val))
 		i = lstsize(stack_b) - find_index(stack_b, val);
 	i = find_place_in_a(stack_a, val) + i;
+	return (i);
 }
 
 int	rot_check_rrarb_a(t_stack *stack_a, t_stack *stack_b, int val)

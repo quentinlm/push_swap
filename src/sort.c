@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:42:02 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 14:24:00 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 14:36:39 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ void	sort_for_three(t_stack **stack_a, t_stack **stack_b)
 t_stack	*sort_b(t_stack **stack_a, t_stack **stack_b)
 {
 	if (lstsize(*stack_a) > 3 && !is_sorted(*stack_a))
-		pb(stack_a, &stack_b);
+		pb(stack_a, stack_b);
 	if (lstsize(*stack_a) > 3 && !is_sorted(*stack_a))
-		pb(stack_a, &stack_b);
+		pb(stack_a, stack_b);
 	if (lstsize(*stack_a) > 3 && !is_sorted(*stack_a))
-		sort_for_three(stack_a, &stack_b);
+		sort_for_three(stack_a, stack_b);
 	if (!is_sorted(*stack_a))
 		sort_three(stack_a);
-	return (stack_b);
+	return (*stack_b);
 }
 
 t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
@@ -85,10 +85,10 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		sa(stack_a);
 	else
 	{
-		stack_b = sort_b(stack_a, stack_b);
-		stack_a = sort_a(stack, &stack_b);
+		*stack_b = sort_b(stack_a, stack_b);
+		*stack_a = *sort_a(&stack, stack_b);
 		i = find_index(*stack_a, ft_min(*stack_a));
-		if (i < listsize(*stack_a) - i)
+		if (i < lstsize(*stack_a) - i)
 		{
 			while ((*stack_a)->value != ft_min(*stack_a))
 				ra(stack_a);

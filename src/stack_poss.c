@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:59:51 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 13:06:52 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 14:38:55 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	find_place_in_b(t_stack *stack_b, int check_val)
 	if (check_val > stack_b->value && check_val < ft_lstlast(stack_b)->value)
 		i = 0;
 	else if (check_val > ft_max(stack_b) || check_val < ft_min(stack_b))
-		i = find_index;
+		i = find_index(stack_b, ft_max(stack_b));
 	else
 	{
 		tmp = stack_b->next;
@@ -58,7 +58,7 @@ int	find_place_in_a(t_stack *stack_a, int check_val)
 	if (check_val < stack_a->value && check_val > ft_lstlast(stack_a)->value)
 		i = 0;
 	else if (check_val > ft_max(stack_a) || check_val < ft_min(stack_a))
-		i = ft_find_index(stack_a, ft_min(stack_a));
+		i = find_index(stack_a, ft_min(stack_a));
 	else
 	{
 		tmp = stack_a->next;
