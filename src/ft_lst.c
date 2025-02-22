@@ -6,17 +6,17 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:33:17 by quclaque          #+#    #+#             */
-/*   Updated: 2025/01/30 10:32:56 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 12:21:11 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(int value)
+t_stack	*ft_lstnew(int value)
 {
-	t_list	*new;
+	t_stack	*new;
 
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->next = NULL;
@@ -24,35 +24,42 @@ t_list	*ft_lstnew(int value)
 	return (new);
 }
 
-void	ft_lstadd_front(t_stack *stack, t_list *new)
+t_stack	*ft_lstlast(t_stack *stack)
 {
-	if (!stack || !new)
-		return ;
-	new->next = stack->top;
-	stack->top = new;
-	stack->size++;
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
-t_list	*lstlast(t_stack *stack)
+void	free_lst(t_stack *stack_a, t_stack *stack_b)
 {
-	t_list	*tmp;
+	t_stack	*current;
+	t_stack	*tmp;
 
-	tmp = stack->top;
-	while (tmp->next)
+	current = stack_a;
+	while (current)
 	{
-		tmp = tmp->next;
-		if (tmp->next == NULL)
-			return (tmp);
+		tmp = current;
+		current = current->next;
+		free(tmp);
 	}
-	return (tmp);
+	current = stack_b;
+	while (current)
+	{
+		tmp = current;
+		current = current->next;
+		free(tmp);
+	}
 }
 
 void	ft_printlst(t_stack *stack)
 {
 	char	*char_tmp;
-	t_list	*tmp;
+	t_stack	*tmp;
 
-	tmp = stack->top;
+	tmp = stack;
 	while (tmp)
 	{
 		char_tmp = ft_itoa(tmp->value);
