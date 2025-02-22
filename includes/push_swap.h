@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:32:30 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 13:32:24 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/22 14:08:18 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,14 @@ int		rot_check_rarb(t_stack *stack_a, t_stack *stack_b, int val);
 int		rot_check_rrarrb(t_stack *s_a, t_stack *stack_b, int val);
 int		rot_check_rrarb(t_stack *stack_a, t_stack *stack_b, int val);
 int		rot_check_rarrb(t_stack *stack_a, t_stack *stack_b, int val);
+int		set_rarb_a(t_stack **stack_a, t_stack **stack_b, int val);
+int		set_rrarrb_a(t_stack **stack_a, t_stack **stack_b, int val);
+int		set_rrarb_a(t_stack **stack_a, t_stack **stack_b, int val);
+int		set_rarrb_a(t_stack **stack_a, t_stack **stack_b, int val);
+int		find_best_ba(t_stack *stack_a, t_stack *stack_b);
+int		rot_check_rarb_a(t_stack *stack_a, t_stack *stack_b, int val);
+int		rot_check_rrarrb_a(t_stack *stack_a, t_stack **s_b, int val);
+int		rot_check_rarrb_a(t_stack *stack_a, t_stack *stack_b, int val);
+int		rot_check_rrarb_a(t_stack *stack_a, t_stack *stack_b, int val);
 
 #endif
