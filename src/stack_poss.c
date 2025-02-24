@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 12:59:51 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 14:38:55 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/24 12:03:46 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	find_index(t_stack *stack_a, int value)
 		i++;
 		stack_a = stack_a->next;
 	}
-	stack_a->index = 0;
 	return (i);
 }
 
@@ -51,8 +50,8 @@ int	find_place_in_b(t_stack *stack_b, int check_val)
 
 int	find_place_in_a(t_stack *stack_a, int check_val)
 {
-	int		i;
 	t_stack	*tmp;
+	int		i;
 
 	i = 1;
 	if (check_val < stack_a->value && check_val > ft_lstlast(stack_a)->value)

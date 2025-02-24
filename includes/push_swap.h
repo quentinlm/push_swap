@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:32:30 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 14:40:16 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/24 08:13:23 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 typedef struct s_stack
 {
 	int				value;
-	int				index;
 	struct s_stack	*next;
 }	t_stack;
 
