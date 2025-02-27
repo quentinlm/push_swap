@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 11:24:12 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/24 08:12:02 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/25 11:02:43 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_freestr(char **lst)
 
 void	ft_error(void)
 {
-	write (2, "Erroreeeee\n", 6);
+	write (2, "Error\n", 6);
 	exit(1);
 }
 
@@ -130,6 +130,39 @@ t_stack	*ft_process(int argc, char **argv)
 	return (a);
 }
 
+int	ft_checkdup(t_stack *a)
+{
+	t_stack	*tmp;
+
+	while (a)
+	{
+		tmp = a->next;
+		while (tmp)
+		{
+			if (a->value == tmp->value)
+				return (1);
+			tmp = tmp->next;
+		}
+		a = a->next;
+	}
+	return (0);
+}
+
+void	ft_free(t_stack **lst)
+{
+	t_stack	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		(*lst)->value = 0;
+		free(*lst);
+		*lst = tmp;
+	}
+}
+
 /* int	fill_stack_a(t_stack **stack_a, char **av, int ac)
 {
 	t_stack	*new_node;
@@ -154,6 +187,11 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		return (-1);
 	stack_a = ft_process(ac, av);
+	if (!stack_a || ft_checkdup(stack_a))
+	{
+		ft_free(&stack_a);
+		ft_error();
+	}
 	//if (!check_input(av))
 	//	return (-1);
 	//stack_a = NULL;
@@ -163,14 +201,14 @@ int	main(int ac, char **av)
 	if (!is_sorted(stack_a))
 		sort(&stack_a, &stack_b);
 		
-	ft_printf("Before:\n");
+/* 	ft_printf("Before:\n");
 	ft_printlst(stack_a);
 
 	if (!is_sorted(stack_a))
 		sort(&stack_a, &stack_b);
 
 	ft_printf("After:\n");
-	ft_printlst(stack_a);
+	ft_printlst(stack_a); */
 
 	free_lst(stack_a, stack_b);
 	return (0);

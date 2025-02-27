@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:38:50 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 14:28:48 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:51:15 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	set_rarb_a(t_stack **stack_a, t_stack **stack_b, int val)
 {
-	while ((*stack_a)->value != val && find_place_in_a(*stack_b, val) > 0)
+	while ((*stack_a)->value != val && find_place_in_b(*stack_b, val) > 0)
 		rr(stack_a, stack_b);
 	while ((*stack_a)->value != val)
 		ra(stack_a);

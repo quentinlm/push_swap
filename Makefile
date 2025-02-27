@@ -1,6 +1,6 @@
 NAME = push_swap
 
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra
 
 SRC_PATH = src/
 

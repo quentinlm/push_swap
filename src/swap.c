@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 11:22:15 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/22 12:31:00 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/26 12:49:34 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	sb(t_stack **stack_b)
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
+	swap(stack_a);
+	swap(stack_b);
 	ft_printf("ss\n");
 }
