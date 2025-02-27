@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 14:09:26 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/27 16:45:46 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:07:59 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	set_rarrb_b(t_stack **stack_a, t_stack **stack_b, int val)
 	pa(stack_a, stack_b);
 	return (-1);
 }*/
-
 
 static void rotate_b_forward_until_val(t_stack **stack_b, int val)
 {
