@@ -6,7 +6,7 @@
 /*   By: quclaque <quclaque@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 13:38:50 by quclaque          #+#    #+#             */
-/*   Updated: 2025/02/27 16:43:08 by quclaque         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:18:56 by quclaque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,19 @@ int	set_rarrb_a(t_stack **stack_a, t_stack **stack_b, int val)
 	return (-1);
 } */
 
-static void rotate_a_forward_until_val(t_stack **stack_a, int val)
+static void	rotate_a_forward_until_val(t_stack **stack_a, int val)
 {
-    while ((*stack_a)->value != val)
-        ra(stack_a);
+	while ((*stack_a)->value != val)
+		ra(stack_a);
 }
 
-static void rotate_a_backward_until_val(t_stack **stack_a, int val)
+static void	rotate_a_backward_until_val(t_stack **stack_a, int val)
 {
-    while ((*stack_a)->value != val)
-        rra(stack_a);
+	while ((*stack_a)->value != val)
+		rra(stack_a);
 }
 
-static void rotate_both_forward_while(t_stack **stack_a, t_stack **stack_b, int val)
+static void	rotate_both_forward_while(t_stack **stack_a, t_stack **stack_b, int val)
 {
     // Assumes we want forward rotation if stack_a != val and place_in_b > 0
     while ((*stack_a)->value != val && find_place_in_b(*stack_b, val) > 0)
